@@ -5,7 +5,7 @@ import { closeModal2 } from "./closeModal2.js"
 const createUser = (userData) => {
   return (dispatch) => {
     return axios
-      .post("http://localhost:3001/signup", userData)
+      .post("/signup", userData)
       .then((response) => {
         // Usuario creado exitosamente
         // Aquí puedes mostrar una alerta o realizar otras acciones
