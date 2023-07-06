@@ -1,0 +1,42 @@
+.card{
+    position: relative;
+    border: solid 2px;
+    border-radius: 10px;
+    width: 22%;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    min-height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.562)
+}
+.card:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.897);
+}
+
+.title{
+    width: 100%;
+}
+
+.description{
+    width: 100%;
+}
+
+.date{
+    position: relative;
+    width: 100%;
+    bottom: 0px;
+}
+
+.btn{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+.card h3{
+    margin-top: 15px;
+    margin-bottom: 0;
+}

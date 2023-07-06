@@ -1,0 +1,57 @@
+.container{
+    display: flex-box;
+    position: relative;
+    background-color: rgb(132, 23, 23);
+    width: 100%;
+    height: 100px;
+}
+
+.containerLogo{
+    position: relative;
+    width: 300px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.icono{
+    position: relative;
+    display: flex;
+    height: 60%;
+    width: 20%;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+.logo{
+    position: relative;
+    color: white;
+    font-size: 200%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.gorro{
+    width: 100%;
+    height: 40px;
+}
+
+.grid{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.col{
+    margin: 0 auto;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.col a{
+    color: rgb(141, 183, 229);
+}
