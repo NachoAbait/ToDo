@@ -11,6 +11,12 @@ dotenv.config();
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST;
 
+// SERVIDOR
+const app = express();
+app.listen(3001, () => {
+  console.log(`Server on Port: ${PORT}`);
+});
+
 //MIDDLEWARES
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -25,12 +31,6 @@ app.use((req, res, next) => {
   );
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
-});
-
-// SERVIDOR
-const app = express();
-app.listen(3001, () => {
-  console.log(`Server on Port: ${PORT}`);
 });
 
 //RUTAS
