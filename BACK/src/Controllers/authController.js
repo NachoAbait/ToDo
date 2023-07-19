@@ -31,10 +31,7 @@ export const signup = async (req, res) => {
     const token = await createAccessToken({ id: userSaved._id });
 
     //Creamos la cookie
-    res.cookie("token", token, {
-      sameSite: "none",
-      secure: true,
-    });
+    res.cookie("token", token);
 
     res.status(201).json({
       id: userSaved._id,
@@ -65,10 +62,7 @@ export const login = async (req, res) => {
     const token = await createAccessToken({ id: userFound._id });
 
     //Creamos la cookie
-    res.cookie("token", token, {
-      domain: "https://to-do-roan-pi.vercel.app/",
-      sameSite: "none",
-    });
+    res.cookie("token", token);
 
     res.status(201).json({
       id: userFound._id,
