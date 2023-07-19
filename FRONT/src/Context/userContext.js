@@ -61,7 +61,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const cookies = Cookies.get();
     console.log("estas son las cookies");
-    console.log(cookies);
+    console.log(cookies.token);
     if (cookies.token) {
       console.log(cookies.token);
     }
