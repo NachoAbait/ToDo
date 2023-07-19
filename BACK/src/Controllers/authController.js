@@ -66,7 +66,6 @@ export const login = async (req, res) => {
 
     //Creamos la cookie
     res.cookie("token", token, {
-      domain: "https://to-do-roan-pi.vercel.app",
       sameSite: "none",
       secure: true,
       httpOnly: true,
