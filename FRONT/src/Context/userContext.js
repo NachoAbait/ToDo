@@ -56,6 +56,7 @@ export const UserProvider = ({ children }) => {
     setUser(null);
   };
 
+ //s
   // Proporciona el estado 'user', las funciones  signup' y 'logout' a través del contexto
   return (
     <UserContext.Provider value={{ user, signup, signin, logout }}>
