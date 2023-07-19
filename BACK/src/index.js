@@ -32,6 +32,12 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
+app.use(
+  cors({
+    origin: "https://to-do-roan-pi.vercel.app",
+    credentials: true,
+  })
+);
 
 //RUTAS
 app.use(authRoutes);

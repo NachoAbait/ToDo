@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./COMPONENTS/Home/Home.js";
 import Profile from "./COMPONENTS/Profile/Profile.js";
-import axios from "axios";
+
 
 
 function App() {
