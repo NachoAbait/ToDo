@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext } from "react";
 import createUser from "../REDUX/Actions/createUser.js";
 import { useDispatch, useSelector } from "react-redux";
 import login from "../REDUX/Actions/login.js";
+import Cookies from "js-cookies"
 
 // Crea el contexto de usuario
 export const UserContext = createContext();
