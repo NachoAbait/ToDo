@@ -56,7 +56,15 @@ export const UserProvider = ({ children }) => {
     setUser(null);
   };
 
-  // dsa
+   // Verificar si hay un token vigente para mantener los datos del usuario
+   useEffect(() => {
+    const cookies = Cookies.get();
+    console.log("estas son las cookies");
+    console.log(cookies);
+    if (cookies.token) {
+      console.log(cookies.token);
+    }
+  }, []);
 
   // Proporciona el estado 'user', las funciones  signup' y 'logout' a través del contexto
   return (
