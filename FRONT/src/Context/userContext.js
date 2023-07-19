@@ -1,8 +1,8 @@
 import React, { createContext, useState, useContext } from "react";
 import createUser from "../REDUX/Actions/createUser.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, useEffect } from "react-redux";
 import login from "../REDUX/Actions/login.js";
-import Cookies from "js-cookies"
+import Cookies from "js-cookies";
 
 // Crea el contexto de usuario
 export const UserContext = createContext();
@@ -57,8 +57,8 @@ export const UserProvider = ({ children }) => {
     setUser(null);
   };
 
-   // Verificar si hay un token vigente para mantener los datos del usuario
-   useEffect(() => {
+  // Verificar si hay un token vigente para mantener los datos del usuario
+  useEffect(() => {
     const cookies = Cookies.get();
     console.log("estas son las cookies");
     console.log(cookies);
