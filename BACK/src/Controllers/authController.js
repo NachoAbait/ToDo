@@ -32,6 +32,7 @@ export const signup = async (req, res) => {
 
     //Creamos la cookie
     res.cookie("token", token, {
+      maxAge: 10000,
       sameSite: "none",
       secure: true,
     });
@@ -66,6 +67,7 @@ export const login = async (req, res) => {
 
     //Creamos la cookie
     res.cookie("token", token, {
+      maxAge: 10000,
       sameSite: "none",
       secure: true,
     });
