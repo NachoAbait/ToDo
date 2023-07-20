@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 
-/*
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://to-do-roan-pi.vercel.app"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Credentials", "true");
@@ -34,12 +34,8 @@ app.use((req, res, next) => {
   );
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
-});*/
+});
 
-app.use(cors({
-  origin: "https://to-do-roan-pi.vercel.app", // Reemplaza con el dominio de tu front-end
-  credentials: true // Permite enviar cookies y encabezados de autenticación
-}));
 
 //RUTAS
 app.use(authRoutes);
