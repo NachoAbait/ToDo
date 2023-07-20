@@ -66,7 +66,7 @@ export const login = async (req, res) => {
 
     //Creamos la cookie
     res.cookie("token", token, {
-      sameSite: "lax",
+      sameSite: "none",
       secure: true,
       httpOnly: true,
     });
