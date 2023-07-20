@@ -7,7 +7,6 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import cors from "cors"; // Importa el paquete cors aquí
 
-
 dotenv.config();
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST;
@@ -24,9 +23,8 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 
-
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://to-do-roan-pi.vercel.app"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -35,7 +33,6 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
-
 
 //RUTAS
 app.use(authRoutes);
