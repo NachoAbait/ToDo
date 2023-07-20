@@ -4,9 +4,7 @@ import { closeModal } from "./closeModal.js";
 const login = (userData) => {
   return (dispatch) => {
     return axios
-      .post("/login", {
-        userData,
-      })
+      .post("/login", userData)
       .then((response) => {
         // Usuario creado exitosamente
         // Aquí puedes mostrar una alerta o realizar otras acciones
