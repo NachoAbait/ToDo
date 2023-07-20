@@ -65,11 +65,7 @@ export const login = async (req, res) => {
     const token = await createAccessToken({ id: userFound._id });
 
     //Creamos la cookie
-    res.cookie("token", token, {
-      sameSite: None,
-      secure: true,
-      httpOnly: true,
-    });
+    res.cookie("token", token);
 
     res.status(201).json({
       id: userFound._id,
