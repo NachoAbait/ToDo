@@ -5,11 +5,7 @@ const login = (userData) => {
   return (dispatch) => {
     return axios
       .post("/login", {
-        method: "POST",
-        mode: "cors",
-        credentials: "include",
-        headers: headers,
-        body: userData,
+        userData,
       })
       .then((response) => {
         // Usuario creado exitosamente
