@@ -4,7 +4,13 @@ import { closeModal } from "./closeModal.js";
 const login = (userData) => {
   return (dispatch) => {
     return axios
-      .post("/login", { userData, credentials: "include" })
+      .post("/login", {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers: headers,
+        body: userData,
+      })
       .then((response) => {
         // Usuario creado exitosamente
         // Aquí puedes mostrar una alerta o realizar otras acciones
