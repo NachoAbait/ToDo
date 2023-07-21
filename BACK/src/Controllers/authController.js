@@ -31,7 +31,10 @@ export const signup = async (req, res) => {
     const token = await createAccessToken({ id: userSaved._id });
 
     //Creamos la cookie
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      sameSite: "none",
+      secure: true,
+    });
 
     res.status(201).json({
       id: userSaved._id,

@@ -19,7 +19,7 @@ const login = (userData) => {
           throw new Error("Invalid password");
         } else {
           // Otros errores
-          // Aquí puedes manejar otros errores de la solicitud
+          // Aquí puedes manejar otros errores de la solicitud.
           throw new Error("Error: " + error.message);
         }
       });
