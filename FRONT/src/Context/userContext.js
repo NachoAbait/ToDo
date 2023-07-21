@@ -57,9 +57,6 @@ export const UserProvider = ({ children }) => {
     setUser(null);
   };
 
-<<<<<<< HEAD
- //s
-=======
   // Verificar si hay un token vigente para mantener los datos del usuario
   useEffect(() => {
     const cookies = Cookies.get();
@@ -70,7 +67,6 @@ export const UserProvider = ({ children }) => {
     }
   }, []);
 
->>>>>>> 83866ecab75029933b37cfc19f1247ee8e80bae5
   // Proporciona el estado 'user', las funciones  signup' y 'logout' a través del contexto
   return (
     <UserContext.Provider value={{ user, signup, signin, logout }}>
