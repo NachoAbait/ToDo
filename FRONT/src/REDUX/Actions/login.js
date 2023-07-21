@@ -22,7 +22,7 @@ const login = (userData) => {
           // Aquí puedes manejar otros errores de la solicitud
           throw new Error("Error: " + error.message);
         }
-      });
+      }); 
   };
 };
 
