@@ -10,16 +10,15 @@ import { openModal2 } from "../../REDUX/Actions/openModal2";
 import { openModal } from "../../REDUX/Actions/openModal";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/userContext.js";
-
+import { Dropdown } from 'react-bootstrap'
 
 export default function Navbar() {
   const dispatch = useDispatch()
-  const { signup, user } = useAuth()
-  console.log(user)
+  const { user, logout } = useAuth()
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const ModalOpen = useSelector((state) => state.isOpen);
   const ModalOpen2 = useSelector((state) => state.isOpen2);
+
 
 
   const toggleModal = () => {
@@ -29,8 +28,6 @@ export default function Navbar() {
   const toggleModal2 = () => {
     dispatch(openModal2())
   };
-
- 
 
   
 
@@ -78,17 +75,18 @@ export default function Navbar() {
             </Modal>
           </div>
         ) :
-          <div> 
-            <Link to="/profile">
-              <div className={css.containerUser}>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  style={{ color: "#ffffff" }}
-                  className={css.user}
-                /> 
+        <div className={css.containerUser}>
+        
+              <div className={css.opcion}>
+                <Link to="/profile"  className={css.dropItem}>Profile</Link>
               </div>
-            </Link>
-          </div>
+              <div className={css.opcion}>
+              <Link to="/"  className={css.dropItem} onClick={logout}>logOut</Link>
+              </div>
+                
+        </div>
+          
+
         }
         
       </div>

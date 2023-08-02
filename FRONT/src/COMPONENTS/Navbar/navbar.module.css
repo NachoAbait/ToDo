@@ -26,16 +26,34 @@
 
 .usuario{
     position: absolute;
-    right: 0;
+    display: flex;
+    right: 0px;
     width: 20%;
     height: 50%;
-    align-items: center;
-    justify-content: center;
     height: 100%;
 }
 
 .user:hover{
     cursor: pointer;
+}
+
+
+
+.dropdownMenu{
+  background-color:  rgb(132, 23, 23);
+  display: flex;
+  position: relative;
+  margin-top: 92px;
+  margin-right: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.dropItem{
+  position: relative;
+  width: 100%;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .task{
@@ -91,11 +109,25 @@
   }
 
   .containerUser{
-    width: 30%;
+    width: 80%;
     height: 100%;
-    position: absolute;
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    right: 30px;
+  }
+
+  .opcion{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .opcion:hover{
+    background-color: #ff0000;
+    cursor: pointer;
   }

@@ -55,7 +55,8 @@ export const UserProvider = ({ children }) => {
 
   // Función para eliminar los datos del usuario al cerrar sesión
   const logout = () => {
-    setUser(null);
+    Cookies.remove("token")
+    setUser(null)
   };
 
   // Verificar si hay un token vigente para mantener los datos del usuario
