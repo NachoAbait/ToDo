@@ -66,14 +66,9 @@ export const login = async (req, res) => {
     //Creamos el token
     const token = await createAccessToken({ id: userFound._id });
 
-    //Creamos la cookie
-    res.cookie("token", token, {
-      sameSite: "none",
-      secure: true,
-      domain: "to-do-roan-pi.vercel.app",
-    });
-
+    // Respondemos con el token y los detalles del usuario
     res.status(201).json({
+      token, // incluimos el token en la respuesta
       id: userFound._id,
       user: userFound.user,
       email: userFound.email,

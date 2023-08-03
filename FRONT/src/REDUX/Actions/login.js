@@ -8,6 +8,7 @@ const login = (userData) => {
       .then((response) => {
         // Usuario creado exitosamente
         // Aquí puedes mostrar una alerta o realizar otras acciones
+        localStorage.setItem("token", response.data.token)
         dispatch(closeModal());
         return response.data; // Puedes devolver cualquier dato necesario
       })
