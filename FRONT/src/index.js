@@ -11,7 +11,7 @@ import { UserProvider } from "../src/Context/userContext.js";
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://todo-production-a086.up.railway.app";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
