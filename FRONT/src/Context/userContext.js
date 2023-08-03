@@ -53,11 +53,15 @@ export const UserProvider = ({ children }) => {
       });
   };
 
-  // Función para eliminar los datos del usuario al cerrar sesión
-  const logout = () => {
-    Cookies.remove("token")
-    setUser(null)
-  };
+  
+// Función para eliminar los datos del usuario al cerrar sesión
+const logout = () => {
+  localStorage.removeItem('token');
+  setUser(null);
+};
+
+
+
 // Verificar si hay un token vigente para mantener los datos del usuario
 useEffect(() => {
   async function checkLogin() {
