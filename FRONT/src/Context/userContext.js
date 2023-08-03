@@ -58,26 +58,26 @@ export const UserProvider = ({ children }) => {
     Cookies.remove("token")
     setUser(null)
   };
-
-  // Verificar si hay un token vigente para mantener los datos del usuario
-  useEffect(() => {
-    async function checkLogin() {
-      const cookies = Cookies.get();
-      if (!cookies.token) {
-        return setUser(null);
-      }
-
-      try {
-        const res =  await dispatch( verifyToken(cookies.token));
-        if (!res) return setUser(null);
-        setUser(res.payload);
-      } catch (error) {
-        setUser(null);
-      }
+// Verificar si hay un token vigente para mantener los datos del usuario
+useEffect(() => {
+  async function checkLogin() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return setUser(null);
     }
-    checkLogin();
 
-  }, []);
+    try {
+      const res = await dispatch(verifyToken(token));
+      if (!res) return setUser(null);
+      setUser(res.payload);
+    } catch (error) {
+      setUser(null);
+    }
+  }
+  checkLogin();
+
+}, []);
+
 
   // Proporciona el estado 'user', las funciones  signup' y 'logout' a través del contexto
   return (
