@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export function getTasks() {
+export function getTasks(token) {
   return async function (dispatch) {
     console.log("estoy en la action");
-    const tasks = await axios.get("/tasks");
+    const tasks = await axios.get("/tasks", token) ;
 
     console.log("estas son las tasks:");
     console.log(tasks);

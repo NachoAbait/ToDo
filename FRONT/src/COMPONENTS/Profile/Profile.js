@@ -16,8 +16,11 @@ export default function Profile() {
   const tasks = useSelector((state) => state.tasks);
   console.log(tasks);
 
+
   useEffect(() => {
-    dispatch(getTasks());
+    const token = localStorage.getItem('token');
+    console.log("desde el front", token)
+    dispatch(getTasks(token));
   }, []);
 
   const handleSubmit = (e) => {
