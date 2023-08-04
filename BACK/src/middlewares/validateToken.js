@@ -7,7 +7,7 @@ export const authRequired = (req, res, next) => {
   console.log(TOKEN_SECRET);
   console.log(req);
 
-  const token = localStorage.getItem("token");
+  const token = req.headers.authorization;
 
   // Vemos si hay un token
   if (!token) {
