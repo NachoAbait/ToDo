@@ -18,7 +18,8 @@ export default function Profile() {
 
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = {token: localStorage.getItem('token')};
+    
     console.log("desde el front", token)
     dispatch(getTasks(token));
   }, []);
