@@ -24,9 +24,12 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 
 const corsOptions = {
-  origin: 'https://to-do-roan-pi.vercel.app',
+  origin: 'https://to-do-roan-pi.vercel.app', // update to match the domain you will make the request from
   credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 };
 
 app.use(cors(corsOptions));
