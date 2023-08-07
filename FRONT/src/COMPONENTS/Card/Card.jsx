@@ -20,7 +20,7 @@ export default function Card({ title, description, date, id }) {
     <div className={css.card}>
       <h3>{title}</h3>
       <p>{description}</p>
-      <div className={css.date}>{date}</div>
+      <div className={css.date}>{date.split('T')[0]}</div>
       <div className={css.btn} onClick={handleSubmit}>
         ❌
       </div>
