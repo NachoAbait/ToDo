@@ -4,10 +4,9 @@ import { TOKEN_SECRET } from "../config.js";
 export const authRequired = (req, res, next) => {
   //Extraemos la cookie del header
   console.log("en authRequired");
-  console.log(TOKEN_SECRET);
-  console.log(req);
 
-  const { token } = req.body;
+  const authHeader = req.headers.authorization;
+  console.log(authHeader);
 
   // Vemos si hay un token
   if (!token) {
