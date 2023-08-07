@@ -7,11 +7,11 @@ import { Provider } from "react-redux";
 import { store } from "./REDUX/Store/index.js";
 import { UserProvider } from "../src/Context/userContext.js";
 
-
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "https://todo-production-a086.up.railway.app";
+/*axios.defaults.baseURL = "https://todo-production-a086.up.railway.app";*/
+axios.defaults.baseURL = "http://localhost:3001";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
