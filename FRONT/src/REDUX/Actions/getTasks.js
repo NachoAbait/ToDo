@@ -6,7 +6,7 @@ export function getTasks(token) {
     console.log(token);
 
     const config = {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token.token}` },
     };
 
     const tasks = await axios.get("/tasks", config);
