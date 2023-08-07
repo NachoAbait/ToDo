@@ -38,8 +38,9 @@ export default function Profile() {
     if (taskData.title === "" || taskData.description === "") {
       return alert("You must complete all fields");
     }
-
-    dispatch(postTask(taskData));
+    
+    const token = localStorage.getItem('token');
+    dispatch(postTask(taskData, token));
     title.value = "";
     description.value = "";
   };
