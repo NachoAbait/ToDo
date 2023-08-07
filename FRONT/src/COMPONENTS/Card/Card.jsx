@@ -7,9 +7,11 @@ import { getTasks } from "../../REDUX/Actions/getTasks";
 export default function Card({ title, description, date, id }) {
   const dispatch = useDispatch();
   
+  const token = localStorage.getItem('token');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(deleteTask(id));
+    await dispatch(deleteTask(id, token));
   };
 
   return (
