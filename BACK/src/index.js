@@ -28,9 +28,16 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization" // Nota el 'Authorization' agregado al final
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization" // Allow 'Authorization' header
   );
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+
+  // Preflight request. Reply successfully:
+  if (req.method === 'OPTIONS') {
+    res.status(200).send();
+    return;
+  }
+
   next();
 });
 
