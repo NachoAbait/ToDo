@@ -7,8 +7,7 @@ export const authRequired = (req, res, next) => {
   console.log(TOKEN_SECRET);
   console.log(req);
 
-  console.log(req);
-  const { token } = req.token;
+  const { token } = req.body;
 
   // Vemos si hay un token
   if (!token) {
