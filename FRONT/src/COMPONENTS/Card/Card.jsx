@@ -14,6 +14,8 @@ export default function Card({ title, description, date, id }) {
     await dispatch(deleteTask(id, token));
   };
 
+  console.log(date)
+
   return (
     <div className={css.card}>
       <h3>{title}</h3>
